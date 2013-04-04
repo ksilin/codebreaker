@@ -85,6 +85,13 @@ module Codebreaker
         end
       end
 
+      context "1 exact match and 3 number matches with same digit" do
+        it "should return 0" do
+          marker = Marker.new('1234', '1111')
+          marker.number_match_count.should == 0
+        end
+      end
+
       context "4 exact matches" do
         it "should return 4" do
           marker = Marker.new('1234', '1234')
